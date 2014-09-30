@@ -15,7 +15,7 @@ __license__ = "MIT License"
 __status__ = "Prototype"
 
 # imports one per line
-
+import math
 
 def checksum (upc):
     """
@@ -43,6 +43,17 @@ def checksum (upc):
     # check against the the twelfth digit
 
     # return True if they are equal, False otherwise
+
+#1 Add odd number digits then multiplying by 3
+
+
+#2 Add step 1 result + total of even nuber digits
+
+#3 calculate step 2 result modulo 10
+
+#4 Subtract step 3 result from 10
+
+#print result
 
     return False
 
