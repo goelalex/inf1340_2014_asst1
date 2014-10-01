@@ -11,7 +11,7 @@ __license__ = "MIT License"
 __status__ = "Prototype"
 
 # imports one per line
-
+from exercise2 import upc
 # imports one per line
 import pytest
 from exercise2 import checksum
