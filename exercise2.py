@@ -42,7 +42,7 @@ def checksum(upc):
     """
 
     #upc needs to be a doc string
-    upc = str[0:11]
+    #upc = str[0:11]
         # check type of input
         # raise TypeError if not string
     if upc != str():
@@ -56,7 +56,7 @@ def checksum(upc):
         # convert string to array
         # hint: use the list function
     upc_list = list(upc)
-    upc_list = map(int, upc_list)
+    #upc_list = map(int, upc_list)
         # generate checksum using the first 11 digits provided
         # check against the the twelfth digit
             #1 Add odd number digits then multiplying by 3
@@ -64,16 +64,28 @@ def checksum(upc):
             #3 calculate step 2 result modulo 10
             #4 Subtract step 3 result from 10
 
-    upc_check = (10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
+    #upc_check = (10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
 
+    upc_odd = 0
+    upc_even = 0
+    for i in range(len(upc)):
+        if i %2 == 0:
+            upc_even += upc[i]
+        else:
+            upc_odd += upc[i]
+        i += 1
+    upc_odd = upc_odd * 3
+    upc_subtract = upc_odd - upc_even
+    upc_modulo = upc_subtract % 10
+    upc_check = 10 - upc_modulo
 
         # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
     #how to call the upc_list[11] -- need to get this to work and function
-    if upc_check = upc_list[11]:
+    if upc_check == upc_list[-1]:
         return True
 
 
-    elif:
+    else:
         return False
 
