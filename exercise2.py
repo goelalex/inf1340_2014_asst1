@@ -29,7 +29,7 @@ def upc (0, 3, 6, 0, 0, 0, 2, 9, 1, 4, 5, 2):
 def checksum(upc):
     #use a string to represent the object
 
-    upc = str(upc)
+    upc = str(0:11)
 
     """
     Checks if the digits in a UPC is consistent with checksum
