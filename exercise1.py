@@ -41,26 +41,64 @@ def grade_to_gpa(grade):
     """
 
     letter_grade = ""
+    list_grade = ["A+", "A", "A-","B+", "B", "B-","FZ"]
     gpa = 0.0
 
     if type(grade) is str:
         print ("letter") # remove this line once the code is implemented
         # check that the grade is one of the accepted values
         # assign grade to letter_grade
+        for count in range(0,len(list_grade)):
+            if grade == list_grade[count]:
+                letter_grade = grade
+
+        if letter_grade == "":
+            print("error")
+            raise ValueError("Invalid value passed as parameter")
+
     elif type(grade) is int:
         print("mark") # remove this line once the code is implemented
         # check that grade is in the accepted range
         # convert the numeric grade to a letter grade
         # assign the value to letter_grade
         # hint: letter_grade = mark_to_letter(grade)
+        if grade > 100 | grade < 0:  #??????? CANNOT USE OR STATEMENT????
+            print("error")
+            raise ValueError("Invalid type passed as parameter")
+        elif grade >= 90:
+            letter_grade = "A+"
+        elif grade >= 85:
+            letter_grade = "A"
+        elif grade >= 80:
+            letter_grade = "A-"
+        elif grade >= 77:
+            letter_grade = "B+"
+        elif grade >= 73:
+            letter_grade = "B"
+        elif grade >= 70:
+            letter_grade = "B-"
+        else:
+            letter_grade = "FZ"
     else:
         # raise a TypeError exception
         raise TypeError("Invalid type passed as parameter")
 
     # write a long if-statement to convert letter_grade
     # assign the value to gpa
-    if letter_grade == "A":
+    if letter_grade == "A+":
         gpa = 4.0
+    elif letter_grade == "A":
+        gpa = 4.0
+    elif letter_grade == 'A-':
+        gpa = 3.7
+    elif letter_grade == 'B+':
+        gpa = 3.3
+    elif letter_grade == 'B':
+        gpa = 3.0
+    elif letter_grade == 'B-':
+        gpa = 2.7
+    elif letter_grade == 'FZ':
+        gpa = 0.0
 
     return gpa
 
