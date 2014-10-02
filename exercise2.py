@@ -69,6 +69,7 @@ def checksum(upc):
 
         # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
+    #how to call the upc_list[11] -- need to get this to work and function
     if upc_check = upc_list[11]:
         return True
 
