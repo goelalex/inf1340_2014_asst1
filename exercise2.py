@@ -19,7 +19,6 @@ import math
 
 #upc = 03600029145x where x = 2
 
-def upc (0, 3, 6, 0, 0, 0, 2, 9, 1, 4, 5, 2):
 
 #prints 12th digit: print(10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
 #not sure if I need the for loop, but definitely need the (sum(upc[::2]))
@@ -27,9 +26,8 @@ def upc (0, 3, 6, 0, 0, 0, 2, 9, 1, 4, 5, 2):
 #     #num = (sum(upc[::2]))
 
 def checksum(upc):
-    #use a string to represent the object
 
-    upc = str(0:11)
+
 
     """
     Checks if the digits in a UPC is consistent with checksum
@@ -43,40 +41,38 @@ def checksum(upc):
         ValueError if string is the wrong length (with error string stating how many digits are over or under
     """
 
-    # check type of input
-    # raise TypeError if not string
-if upc != str():
-    raise TypeError("Invalid Input")
+    #upc needs to be a doc string
+    upc = str[0:11]
+        # check type of input
+        # raise TypeError if not string
+    if upc != str():
+        raise TypeError("Invalid Input")
 
-    # check length of string
-    # raise ValueError if not 12
-if len(upc) != 12:
-    raise ValueError("Incorrect Length")
+        # check length of string
+        # raise ValueError if not 12
+    if len(upc) != 12:
+        raise ValueError("Incorrect Length")
 
-    # convert string to array
-    # hint: use the list function
-upc = '0, 3, 6, 0, 0, 0, 2, 9, 1, 4, 5, 2'
-upc = upc.split(',')
-upc
-[0, 3, 6, 0, 0, 0, 2, 9, 1, 4, 5, 2]
+        # convert string to array
+        # hint: use the list function
+    upc_list = list(upc)
+    upc_list = map(int, upc_list)
+        # generate checksum using the first 11 digits provided
+        # check against the the twelfth digit
+            #1 Add odd number digits then multiplying by 3
+            #2 Add step 1 result + total of even number digits
+            #3 calculate step 2 result modulo 10
+            #4 Subtract step 3 result from 10
 
-    # generate checksum using the first 11 digits provided
-    # check against the the twelfth digit
-        #1 Add odd number digits then multiplying by 3
-        #2 Add step 1 result + total of even number digits
-        #3 calculate step 2 result modulo 10
-        #4 Subtract step 3 result from 10
-(10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
-
-
-    # return True if they are equal, False otherwise
-#checks if upc 12th number equals the checksum result
-if checksum = upc[11]
-    return True
+    upc_check = (10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
 
 
+        # return True if they are equal, False otherwise
+    #checks if upc 12th number equals the checksum result
+    if upc_check = upc_list[11]:
+        return True
 
 
-
-    return False
+    elif:
+        return False
 
