@@ -17,13 +17,7 @@ __status__ = "Prototype"
 # imports one per line
 import math
 
-#upc = 03600029145x where x = 2
-
-
-#prints 12th digit: print(10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
-#not sure if I need the for loop, but definitely need the (sum(upc[::2]))
-#for num in upc:
-#     #num = (sum(upc[::2]))
+#upc checksum function
 
 def checksum(upc):
 
@@ -55,6 +49,7 @@ def checksum(upc):
 
         # convert string to array
         # hint: use the list function
+    #makes upc a list
     upc_list = list(upc)
     #upc_list = map(int, upc_list)
         # generate checksum using the first 11 digits provided
@@ -65,7 +60,7 @@ def checksum(upc):
             #4 Subtract step 3 result from 10
 
     #upc_check = (10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
-
+    #upc_check line by line and put upc_odd and even in order to make split the sum of the odds and sum of the evens
     upc_odd = 0
     upc_even = 0
     for i in range(len(upc)):
@@ -81,11 +76,9 @@ def checksum(upc):
 
         # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
-    #how to call the upc_list[11] -- need to get this to work and function
+    #check if upc_check = upc_list
     if upc_check == upc_list[-1]:
         return True
-
-
     else:
         return False
 
