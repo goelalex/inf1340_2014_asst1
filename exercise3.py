@@ -27,6 +27,8 @@ def decide_rps(player1, player2):
         decide_rps(player1)
     elif rps_results == 2:
         decide_rps(player2)
+    elif rps_results == 0:
+        return "Tie"
 
     #prints result 1 which is Paper, Stone
     print(rps_results[("Paper", "Stone")])
