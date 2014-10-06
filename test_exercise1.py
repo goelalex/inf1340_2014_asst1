@@ -30,7 +30,7 @@ def test_letter_grade():
     with pytest.raises(ValueError):
         grade_to_gpa("q")
         grade_to_gpa("abc")
-    # add more tests for invalid values
+        grade_to_gpa("")
 
 
 def test_percentage_grade():
@@ -84,6 +84,7 @@ def test_float_input():
     with pytest.raises(TypeError):
         grade_to_gpa(82.5)
         grade_to_gpa(0.0)
+        grade_to_gpa(-100.0)
 
 
 test_letter_grade()
