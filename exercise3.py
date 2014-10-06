@@ -9,7 +9,7 @@
     Other results are ties.
 """
 
-_author__ = 'Zhao Hu'
+_author__ = "Zhao Hu"
 __email__ = "zhao.hu@mail.utoronto.ca"
 
 
@@ -51,7 +51,7 @@ def decide_rps(player1, player2):
             if player2 == item:
                 input_player2 = player2
         if input_player1 and input_player2:
-            return rps_results[(input_player1,input_player2)]
+            return rps_results[(input_player1, input_player2)]
         else:
             raise ValueError("Invalid value passed as parameter")
     else:
