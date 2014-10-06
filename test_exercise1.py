@@ -81,10 +81,15 @@ def test_float_input():
     """
     Float inputs
     """
+    #Tests if there are errors in the input format
     with pytest.raises(TypeError):
         grade_to_gpa(82.5)
+    with pytest.raises(TypeError):
         grade_to_gpa(0.0)
+    with pytest.raises(TypeError):
         grade_to_gpa(-100.0)
+    with pytest.raises(TypeError):
+        grade_to_gpa(74.4)
 
 
 test_letter_grade()

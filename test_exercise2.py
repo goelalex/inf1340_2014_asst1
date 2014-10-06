@@ -39,14 +39,19 @@ def test_input():
     """
     Inputs that are the incorrect format and length
     """
+    #Checks if input is correct type
     with pytest.raises(TypeError):
         checksum(1.0)
+    with pytest.raises(TypeError):
         checksum(786936224306)
-
+    #Checks if there are errors in value length
     with pytest.raises(ValueError):
         checksum("1")
+    with pytest.raises(ValueError):
         checksum("1234567890")
+    with pytest.raises(ValueError):
         checksum("-12345678901")
+    with pytest.raises(ValueError):
         checksum("1234567s8901")
     # other tests
 

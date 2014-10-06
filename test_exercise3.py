@@ -23,9 +23,13 @@ def test_input():
     """
     with pytest.raises(ValueError):
         decide_rps("Paper", "Stone")
+    with pytest.raises(ValueError):
         decide_rps("Pap", "Roc")
+    with pytest.raises(ValueError):
         decide_rps("Scissors", "Papers")
+    with pytest.raises(ValueError):
         decide_rps("Sisors", "Paper")
+    with pytest.raises(ValueError):
         decide_rps("Paper", "Block")
     with pytest.raises(TypeError):
         decide_rps(1, 11)
