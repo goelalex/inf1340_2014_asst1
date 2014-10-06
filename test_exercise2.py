@@ -28,9 +28,9 @@ def test_checksum():
     assert checksum("854336576384") is True
     assert checksum("717951000841") is False
     assert checksum("075678164120") is False
-    assert checksum("568439479540") is False
+    assert checksum("568439479545") is False
     assert checksum("301248381248") is False
-    assert checksum("562374673261") is False
+    assert checksum("562374673266") is False
     assert checksum("249572305686") is False
     # other tests
 
