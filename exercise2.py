@@ -42,13 +42,17 @@ def checksum(upc):
     if upc != str():
         raise TypeError("Invalid Input")
 
+
         # check length of string
         # raise ValueError if not 12
     if len(upc) != 12:
         raise ValueError("Incorrect Length")
 
+
         # convert string to array
         # hint: use the list function
+
+
     #makes upc a list
     upc_list = list(upc)
     #upc_list = map(int, upc_list)
@@ -58,6 +62,7 @@ def checksum(upc):
             #2 Add step 1 result + total of even number digits
             #3 calculate step 2 result modulo 10
             #4 Subtract step 3 result from 10
+
 
     #upc_check = (10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
     #upc_check line by line and put upc_odd and even in order to make split the sum of the odds and sum of the evens
@@ -75,6 +80,8 @@ def checksum(upc):
     upc_check = 10 - upc_modulo
 
         # return True if they are equal, False otherwise
+
+
     #checks if upc 12th number equals the checksum result
     #check if upc_check = upc_list
     if upc_check == upc_list[-1]:
