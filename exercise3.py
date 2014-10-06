@@ -8,8 +8,6 @@ def decide_rps(player1, player2):
 #<<<<<<< Updated upstream
     #rps_results = {("Paper", "Rock"): 1, ("Rock", "Paper"): 2, ("Paper","Paper"): 0, ("Paper", "Scissors",): 2, ("Scissors","Paper"): 1, ("Scissors", "Scissors"): 0, ("Rock", "Scissors"): 1, ("Scissors", "Rock"): 2, ("Rock", "Rock"): 0}
     #How do we make this work? Trying to get it to return a type error if the input is not a tuple
-    if rps_results != tuple[()]:
-        return TypeError("Invalid Input")
 #=======
     #rock, paper, scissors dictionary showing all of the potential options
     rps_results = {}
