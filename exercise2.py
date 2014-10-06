@@ -32,15 +32,12 @@ def checksum(upc):
         TypeError if input is not a strong
         ValueError if string is the wrong length (with error string stating how many digits are over or under
     """
-
     #upc needs to be a doc string
     #upc = str[0:11]
         # check type of input
         # raise TypeError if not string
     if type(upc) is not str:
         raise TypeError("Invalid Input")
-
-
         # check length of string
         # raise ValueError if not 12
     elif len(upc) != 12:
@@ -57,10 +54,14 @@ def checksum(upc):
             #2 Add step 1 result + total of even number digits
             #3 calculate step 2 result modulo 10
             #4 Subtract step 3 result from 10
-
-
     #upc_check = (10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
     #upc checks the above formula in simpler form
+    #Adds the odds
+    #Adds the evens
+    #Multiples odds *3
+    #Adds evens and odds
+    #takes modulo of the upc_total
+    #checks if upc_check = 10 - upc_modulo
     upc_odd = 0
     upc_even = 0
     for i in range(0,len(upc)-1):
@@ -75,8 +76,6 @@ def checksum(upc):
         upc_check = 10 - upc_modulo
     else:
         upc_check = upc_modulo
-
-
     # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
     #check if upc_check = upc_list

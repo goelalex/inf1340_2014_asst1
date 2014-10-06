@@ -12,10 +12,10 @@
 _author__ = 'Zhao Hu'
 __email__ = "zhao.hu@mail.utoronto.ca"
 
+
 def decide_rps(player1, player2):
     """
     Returns result of a rock, paper, scissors game
-
     :param:
         player1 (string):  rock, paper, scissors
         player1 (string):  rock, paper, scissors
@@ -23,13 +23,10 @@ def decide_rps(player1, player2):
     :return:
         integer: result of a rock, paper, scissors game
         Value is 0, 1, 2
-
     :raises:
         TypeError if parameter is not a string
         ValueError if parameter is not rock, paper or scissors
     """
-
-
     #Defines different scenarios for Rock, Paper, Scissors
     rps_input = ("Paper", "Rock", "Scissors")
     input_player1 = ""
@@ -39,8 +36,6 @@ def decide_rps(player1, player2):
                    ("Rock", "Scissors"): 1, ("Rock", "Rock"): 0,
                    ("Scissors", "Paper"): 1, ("Scissors", "Rock"): 2,
                    ("Scissors", "Scissors"): 0}
-
-
     # Check if both player1
     #  and player2 are string
     # Check if player1 is a correct input

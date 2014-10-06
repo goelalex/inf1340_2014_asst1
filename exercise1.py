@@ -25,7 +25,6 @@ __status__ = "Prototype"
 def grade_to_gpa(grade):
     """
     Returns the UofT Graduate GPA for a given grade.
-
     :param:
         grade (integer or string): Grade to be converted
             If integer, accepted values are 0-100.
@@ -48,8 +47,6 @@ def grade_to_gpa(grade):
         for count in range(0, len(list_grade)):
             if grade == list_grade[count]:
                 letter_grade = grade
-
-
         # Check if grade is one of the accepted values
         # Print error and raise ValueError exception
         if not letter_grade:
@@ -65,7 +62,6 @@ def grade_to_gpa(grade):
             print(grade)
             print("error")
             raise ValueError("Invalid value passed as parameter")
-
         # convert the numeric grade to a letter grade
         elif grade >= 90:
             letter_grade = "A+"
@@ -81,13 +77,9 @@ def grade_to_gpa(grade):
             letter_grade = "B-"
         else:
             letter_grade = "FZ"
-
-
     # if grade is not string or integer raise a TypeError exception
     else:
         raise TypeError("Invalid type passed as parameter")
-
-
     # check letter_grade, and assign the value to gpa accordingly
     if letter_grade == "A+":
         gpa = 4.0
