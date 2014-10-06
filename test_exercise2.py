@@ -11,8 +11,7 @@ __license__ = "MIT License"
 __status__ = "Prototype"
 
 # imports one per line
-from exercise2 import upc
-# imports one per line
+
 import pytest
 from exercise2 import checksum
 
@@ -23,7 +22,9 @@ def test_checksum():
     """
     assert checksum("786936224306") is True
     assert checksum("085392132225") is True
+    assert checksum("123456789012") is True
     assert checksum("717951000841") is False
+    assert checksum("075678164120") is False
     # other tests
 
 
@@ -38,7 +39,10 @@ def test_input():
     with pytest.raises(ValueError):
         checksum("1")
         checksum("1234567890")
-
+        checksum("-12345678901")
+        checksum("1234567s8901")
     # other tests
 
+test_checksum()
+test_input()
 # add functions for any other tests
