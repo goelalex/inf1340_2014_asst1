@@ -39,7 +39,7 @@ def checksum(upc):
     #upc = str[0:11]
         # check type of input
         # raise TypeError if not string
-    if upc != str():
+    if type(upc) is not str:
         raise TypeError("Invalid Input")
 
         # check length of string
@@ -64,15 +64,16 @@ def checksum(upc):
     upc_odd = 0
     upc_even = 0
     for i in range(len(upc)):
-        if i %2 == 0:
-            upc_even += upc[i]
+        if i % 2 == 0:
+            upc_odd += int(upc[i])
         else:
-            upc_odd += upc[i]
-        i += 1
-    upc_odd = upc_odd * 3
-    upc_subtract = upc_odd - upc_even
-    upc_modulo = upc_subtract % 10
-    upc_check = 10 - upc_modulo
+            upc_even += int(upc[i])
+
+    upc_odd *= 3
+    upc_total = upc_odd + upc_even
+    upc_modulo = upc_total % 10
+    if upc_modulo:
+        upc_check = 10 - upc_modulo
 
         # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
