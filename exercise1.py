@@ -46,26 +46,28 @@ def grade_to_gpa(grade):
 
     if type(grade) is str:
 
-        # check that if grade is one of the accepted values
-        # assign grade to letter_grade
+        # Check that if grade is one of the accepted values
+        # Assign grade to letter_grade
         for count in range(0, len(list_grade)):
             if grade == list_grade[count]:
                 letter_grade = grade
 
-        if letter_grade == "":
-            # if grade is not one of the accepted values, print error and raise ValueError exception
+        if not letter_grade:
+            # Check if grade is one of the accepted values
+            # Print error and raise ValueError exception
             print("error")
             raise ValueError("Invalid value passed as parameter")
 
     elif type(grade) is int:
-        # check that grade is in the accepted range
-        # assign the value to letter_grade
+        # Check that grade is in the accepted range
+        # Assign the value to letter_grade
         # hint: letter_grade = mark_to_letter(grade)
 
-        # if the grade is not in the accepted range, print error and raise ValueError exception
+        # Check if the grade is in the accepted range,
+        # Print error and raise ValueError exception
         if grade > 100 or grade < 0:
             print("error")
-            raise ValueError("Invalid type passed as parameter")
+            raise ValueError("Invalid value passed as parameter")
 
         # convert the numeric grade to a letter grade
         elif grade >= 90:
