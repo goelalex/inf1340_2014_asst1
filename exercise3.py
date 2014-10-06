@@ -28,6 +28,9 @@ def decide_rps(player1, player2):
         TypeError if parameter is not a string
         ValueError if parameter is not rock, paper or scissors
     """
+
+
+    #Defines different scenarios for Rock, Paper, Scissors
     rps_input = ("Paper", "Rock", "Scissors")
     input_player1 = ""
     input_player2 = ""
@@ -36,15 +39,23 @@ def decide_rps(player1, player2):
                    ("Rock", "Scissors"): 1, ("Rock", "Rock"): 0,
                    ("Scissors", "Paper"): 1, ("Scissors", "Rock"): 2,
                    ("Scissors", "Scissors"): 0}
-    if type(player1) is str and type(player2) is str:  # Check if both player1
+
+
+    # Check if both player1
     #  and player2 are string
+    # Check if player1 is a correct input
+    # Assign player1 to input_player1
+    # Check if player2 is a correct input
+    # Assign player1 to input_player1
+    # Check if both input_player1
+    # and input_player2 are not blank
+    if type(player1) is str and type(player2) is str:
         for item in rps_input:
-            if player1 == item:  # Check if player1 is a correct input
-                input_player1 = player1  # Assign player1 to input_player1
-            if player2 == item:  # Check if player2 is a correct input
-                input_player2 = player2  # Assign player1 to input_player1
-        if input_player1 and input_player2:  # Check if both input_player1
-        # and input_player2 are not blank
+            if player1 == item:
+                input_player1 = player1
+            if player2 == item:
+                input_player2 = player2
+        if input_player1 and input_player2:
             return rps_results[(input_player1,input_player2)]
         else:
             raise ValueError("Invalid value passed as parameter")

@@ -40,6 +40,7 @@ def checksum(upc):
     if type(upc) is not str:
         raise TypeError("Invalid Input")
 
+
         # check length of string
         # raise ValueError if not 12
     elif len(upc) != 12:
@@ -57,8 +58,9 @@ def checksum(upc):
             #3 calculate step 2 result modulo 10
             #4 Subtract step 3 result from 10
 
+
     #upc_check = (10 - (((sum(upc[::2])*3) + sum(upc[1::2])) % 10))
-    #upc_check line by line and put upc_odd and even in order to make split the sum of the odds and sum of the evens
+    #upc checks the above formula in simpler form
     upc_odd = 0
     upc_even = 0
     for i in range(0,len(upc)-1):
@@ -74,10 +76,10 @@ def checksum(upc):
     else:
         upc_check = upc_modulo
 
+
     # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
     #check if upc_check = upc_list
-
     if upc_check == int(upc_list[-1]):
         return True
     else:
