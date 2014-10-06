@@ -1,36 +1,52 @@
 #!/usr/bin/env python3
+"""
+    Assignment 1, Exercise 3, INF1340 Fall 2014
+    This module decides the result of a rock, paper, scissors game. The rules of
+    the game are:
+    Scissors beats Paper;
+    Paper beats Rock;
+    Rock beats Scissors;
+    Other results are ties.
+"""
 
+_author__ = 'Zhao Hu'
+__email__ = "zhao.hu@mail.utoronto.ca"
 
 def decide_rps(player1, player2):
-    return 1
+    """
+    Returns result of a rock, paper, scissors game
 
-    #rock_paper_scissors = {'Rock, Paper': 2, 'Rock, Scissors': 1,'Rock, Rock' : 0, 'Paper, Rock' : 1, 'Paper, Scissors': 2, 'Paper, Paper' : 0, 'Scissors, Rock' : 2, 'Scissors, Paper' : 1, 'Scissors, Scissors' :0 }
-#<<<<<<< Updated upstream
-    #rps_results = {("Paper", "Rock"): 1, ("Rock", "Paper"): 2, ("Paper","Paper"): 0, ("Paper", "Scissors",): 2, ("Scissors","Paper"): 1, ("Scissors", "Scissors"): 0, ("Rock", "Scissors"): 1, ("Scissors", "Rock"): 2, ("Rock", "Rock"): 0}
-    #How do we make this work? Trying to get it to return a type error if the input is not a tuple
-    if rps_results != tuple[()]:
-        return TypeError("Invalid Input")
-#=======
-    #rock, paper, scissors dictionary showing all of the potential options
-    rps_results = {}
-    rps_results[("Rock", "Paper")] = 2
-    rps_results[("Rock", "Scissors")] = 1
-    rps_results[("Rock", "Rock")] = 0
-    rps_results[("Paper", "Scissors")] = 2
-    rps_results[("Paper", "Rock")] = 1
-    rps_results[("Paper", "Paper")] = 0
-    rps_results[("Scissors", "Rock")] = 2
-    rps_results[("Scissors", "Paper")] = 1
-    rps_results[("Scissors", "Scissors")] = 0
-#>>>>>>> Stashed changes
-    if rps_results == 1:
-        decide_rps(player1)
-    elif rps_results == 2:
-        decide_rps(player2)
-    elif rps_results == 0:
-        return "Tie"
+    :param:
+        player1 (string):  rock, paper, scissors
+        player1 (string):  rock, paper, scissors
 
-    #prints result 1 which is Paper, Stone
-    print(rps_results[("Paper", "Stone")])
+    :return:
+        integer: result of a rock, paper, scissors game
+        Value is 0, 1, 2
 
-
+    :raises:
+        TypeError if parameter is not a string
+        ValueError if parameter is not rock, paper or scissors
+    """
+    rps_input = ("Paper", "Rock", "Scissors")
+    input_player1 = ""
+    input_player2 = ""
+    rps_results = {("Paper", "Rock"): 1, ("Paper", "Scissors",): 2,
+                   ("Paper", "Paper"): 0, ("Rock", "Paper"): 2,
+                   ("Rock", "Scissors"): 1, ("Rock", "Rock"): 0,
+                   ("Scissors", "Paper"): 1, ("Scissors", "Rock"): 2,
+                   ("Scissors", "Scissors"): 0}
+    if type(player1) is str and type(player2) is str:  # Check if both player1
+    #  and player2 are string
+        for item in rps_input:
+            if player1 == item:  # Check if player1 is a correct input
+                input_player1 = player1  # Assign player1 to input_player1
+            if player2 == item:  # Check if player2 is a correct input
+                input_player2 = player2  # Assign player1 to input_player1
+        if input_player1 and input_player2:  # Check if both input_player1
+        # and input_player2 are not blank
+            return rps_results[(input_player1,input_player2)]
+        else:
+            raise ValueError("Invalid value passed as parameter")
+    else:
+        raise TypeError("Invalid type passed as parameter")
