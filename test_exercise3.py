@@ -14,6 +14,8 @@ def test_checksum():
     assert decide_rps("Paper", "Rock") == 1
     assert decide_rps("Scissors", "Paper") == 1
     assert decide_rps("Scissors", "Rock") == 2
+    assert decide_rps("Paper", "Paper") == 0
+
 
 def test_input():
     """
@@ -24,6 +26,7 @@ def test_input():
         decide_rps("Pap", "Roc")
         decide_rps("Scissors", "Papers")
         decide_rps("Sisors", "Paper")
+        decide_rps("Paper", "Block")
     with pytest.raises(TypeError):
         decide_rps(1, 11)
     # other tests
