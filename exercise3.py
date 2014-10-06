@@ -28,6 +28,8 @@ def decide_rps(player1, player2):
         TypeError if parameter is not a string
         ValueError if parameter is not rock, paper or scissors
     """
+
+
     rps_input = ("Paper", "Rock", "Scissors")
     input_player1 = ""
     input_player2 = ""
@@ -36,6 +38,8 @@ def decide_rps(player1, player2):
                    ("Rock", "Scissors"): 1, ("Rock", "Rock"): 0,
                    ("Scissors", "Paper"): 1, ("Scissors", "Rock"): 2,
                    ("Scissors", "Scissors"): 0}
+
+
     if type(player1) is str and type(player2) is str:  # Check if both player1
     #  and player2 are string
         for item in rps_input:
