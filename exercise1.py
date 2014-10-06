@@ -78,28 +78,16 @@ def grade_to_gpa(grade):
         # convert the numeric grade to a letter grade
         elif grade >= 90:
             letter_grade = "A+"
-
-
         elif grade >= 85:
             letter_grade = "A"
-
-
         elif grade >= 80:
             letter_grade = "A-"
-
-
         elif grade >= 77:
             letter_grade = "B+"
-
-
         elif grade >= 73:
             letter_grade = "B"
-
-
         elif grade >= 70:
             letter_grade = "B-"
-
-
         else:
             letter_grade = "FZ"
 

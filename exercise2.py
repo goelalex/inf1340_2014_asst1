@@ -79,9 +79,8 @@ def checksum(upc):
     upc_modulo = upc_subtract % 10
     upc_check = 10 - upc_modulo
 
-        # return True if they are equal, False otherwise
 
-
+    # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
     #check if upc_check = upc_list
     if upc_check == upc_list[-1]:
