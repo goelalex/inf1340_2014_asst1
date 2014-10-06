@@ -20,6 +20,7 @@ def test_checksum():
     """
     Inputs that are the correct format and length
     """
+    assert checksum("036000291452") is True
     assert checksum("786936224306") is True
     assert checksum("085392132225") is True
     assert checksum("123456789012") is True

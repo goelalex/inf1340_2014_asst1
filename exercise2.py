@@ -19,10 +19,8 @@ import math
 
 #upc checksum function
 
+
 def checksum(upc):
-
-
-
     """
     Checks if the digits in a UPC is consistent with checksum
 
@@ -44,7 +42,7 @@ def checksum(upc):
 
         # check length of string
         # raise ValueError if not 12
-    if len(upc) != 12:
+    elif len(upc) != 12:
         raise ValueError("Incorrect Length")
 
         # convert string to array
@@ -63,23 +61,24 @@ def checksum(upc):
     #upc_check line by line and put upc_odd and even in order to make split the sum of the odds and sum of the evens
     upc_odd = 0
     upc_even = 0
-    for i in range(len(upc)):
+    for i in range(0,len(upc)-1):
         if i % 2 == 0:
             upc_odd += int(upc[i])
         else:
             upc_even += int(upc[i])
-
     upc_odd *= 3
     upc_total = upc_odd + upc_even
     upc_modulo = upc_total % 10
     if upc_modulo:
         upc_check = 10 - upc_modulo
+    else:
+        upc_check = upc_modulo
 
-        # return True if they are equal, False otherwise
+    # return True if they are equal, False otherwise
     #checks if upc 12th number equals the checksum result
     #check if upc_check = upc_list
-    if upc_check == upc_list[-1]:
+
+    if upc_check == int(upc_list[-1]):
         return True
     else:
         return False
-
