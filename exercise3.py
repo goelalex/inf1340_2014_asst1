@@ -46,10 +46,10 @@ def decide_rps(player1, player2):
     # and input_player2 are not blank
     if type(player1) is str and type(player2) is str:
         for item in rps_input:
-            if player1 == item:
-                input_player1 = player1
-            if player2 == item:
-                input_player2 = player2
+            if player1.capitalize() == item:
+                input_player1 = player1.capitalize()
+            if player2.capitalize() == item:
+                input_player2 = player2.capitalize()
         if input_player1 and input_player2:
             return rps_results[(input_player1, input_player2)]
         else:

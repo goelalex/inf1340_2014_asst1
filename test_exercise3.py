@@ -13,8 +13,8 @@ def test_checksum():
     assert decide_rps("Rock", "Scissors") == 1
     assert decide_rps("Paper", "Rock") == 1
     assert decide_rps("Scissors", "Paper") == 1
-    assert decide_rps("Scissors", "Rock") == 2
-    assert decide_rps("Paper", "Paper") == 0
+    assert decide_rps("Scissors", "RoCk") == 2
+    assert decide_rps("paper", "Paper") == 0
 
 
 def test_input():
